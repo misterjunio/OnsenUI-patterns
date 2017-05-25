@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Navigator outside Tabbar | Onsen UI</title>
+  <title>Navigator outside Tabbar | Onsen UI Vanilla</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.3.1/css/onsenui.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.3.1/css/onsen-css-components.css">
 
@@ -36,7 +36,7 @@
   <ons-navigator id="myNavigator">
     <ons-page>
       <ons-toolbar>
-        <div class="center">Navigator</div>
+        <div class="center">Navigator outside Tabbar</div>
       </ons-toolbar>
 
       <ons-tabbar position="auto">
@@ -104,28 +104,26 @@
         <div class="center"></div>
       </ons-toolbar>
 
-      <div style="text-align: center">
-        <ons-card>
-          <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
-          <div class="title"></div>
-          <div class="content">
-            <div>
-              <ons-button>
-                <ons-icon icon="ion-thumbsup"></ons-icon>
-              </ons-button>
-              <ons-button>
-                <ons-icon icon="ion-share"></ons-icon>
-              </ons-button>
-            </div>
-            <ons-list>
-              <ons-list-header>Bindings</ons-list-header>
-              <ons-list-item>Vue</ons-list-item>
-              <ons-list-item>Angular</ons-list-item>
-              <ons-list-item>React</ons-list-item>
-            </ons-list>
+      <ons-card>
+        <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
+        <div class="title"></div>
+        <div class="content">
+          <div>
+            <ons-button>
+              <ons-icon icon="ion-thumbsup"></ons-icon>
+            </ons-button>
+            <ons-button>
+              <ons-icon icon="ion-share"></ons-icon>
+            </ons-button>
           </div>
-        </ons-card>
-      </div>
+          <ons-list>
+            <ons-list-header>Bindings</ons-list-header>
+            <ons-list-item>Vue</ons-list-item>
+            <ons-list-item>Angular</ons-list-item>
+            <ons-list-item>React</ons-list-item>
+          </ons-list>
+        </div>
+      </ons-card>
     </ons-page>
   </ons-template>
 
