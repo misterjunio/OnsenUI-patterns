@@ -7,9 +7,9 @@ import { SettingsComponent } from './settings'
 
 @Component({
   selector: 'ons-page',
-  template: require('./tabbar.html')
+  template: require('./app-tabbar.html')
 })
-export class Tabbar {
+export class AppTabbar {
   home = HomeComponent;
   cards = CardsComponent;
   settings = SettingsComponent;

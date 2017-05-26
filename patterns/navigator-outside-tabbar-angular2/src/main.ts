@@ -9,7 +9,7 @@ import {HttpModule} from '@angular/http';
 import {OnsenModule} from 'angular2-onsenui';
 
 import { MyApp } from './app/app';
-import { Tabbar } from './app/tabbar';
+import { AppTabbar } from './app/app-tabbar';
 import { HomeComponent } from './app/home';
 import { PageNav1Component } from './app/page-nav-1';
 import { CardsComponent } from './app/cards';
@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
     ],
     declarations: [
         MyApp,
-        Tabbar,
+        AppTabbar,
         HomeComponent,
         PageNav1Component,
         CardsComponent,
@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'production') {
         SettingsComponent
     ],
     entryComponents: [
-        Tabbar,
+        AppTabbar,
         HomeComponent,
         PageNav1Component,
         CardsComponent,

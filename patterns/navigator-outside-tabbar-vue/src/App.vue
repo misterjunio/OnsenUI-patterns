@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import tabbar from './Tabbar';
+import appTabbar from './AppTabbar';
 
 export default {
   data() {
     return {
-      pageStack: [tabbar]
+      pageStack: [appTabbar]
     }
   }
 }
