@@ -1,7 +1,11 @@
 {
-  "name": "onsenui-v2-vue-navigation",
-  "version": "2.2.7+20170328.1",
-  "description": "",
+  "name": "navigator-outside-tabbar-vue",
+  "version": "1.0.0",
+  "description": "Navigator outside tabbar pattern with Onsen UI + Vue.",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/misterjunio/OnsenUI-patterns"
+  },
   "dependencies": {
     "onsenui": "2.3.x",
     "vue": "^2.1.10",

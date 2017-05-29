@@ -17,8 +17,17 @@ export default {
     pop() {
       this.pageStack.pop();
     },
-    push() {
-      this.pageStack.push(pageNav2);
+    push($event) {
+      var cardTitle = $event.target.textContent;
+      var pageToPush = {
+        extends: pageNav2,
+        data() {
+          return {
+            cardTitle: cardTitle
+          }
+        }
+      };
+      this.pageStack.push(pageToPush);
     }
   },
   props: ['pageStack']

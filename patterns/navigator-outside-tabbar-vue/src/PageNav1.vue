@@ -31,7 +31,16 @@ export default {
       this.pageStack.pop();
     },
     push() {
-      this.pageStack.push(this.pageNav1);
+      var title = this.$el.querySelector('ons-input').value;
+      var pageToPush = {
+        extends: this.pageNav1,
+        data() {
+          return {
+            title: title
+          }
+        }
+      };
+      this.pageStack.push(pageToPush);
     }
   },
   props: {
