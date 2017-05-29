@@ -1,32 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Toolbar, Page, Button, BackButton } from 'react-onsenui';
+import { Page, Button } from 'react-onsenui';
+
+import PageNav1 from './PageNav1';
 
 export default class Home extends React.Component {
   pushPage() {
-    this.props.navigator.pushPage({ component: Home });
-  }
-
-  popPage() {
-    this.props.navigator.popPage();
-  }
-
-  renderToolbar() {
-    return (
-      <Toolbar>
-        <div className="left"><BackButton>Back</BackButton></div>
-        <div className="center">Another page</div>
-      </Toolbar>
-    );
+    this.props.navigator.pushPage({ component: PageNav1, props: { key: 'pageNav1' } });
   }
 
   render() {
     return (
-      <Page renderToolbar={this.renderToolbar}>
-        <p style={{ textAlign: 'center' }}>
-          <Button onClick={this.pushPage.bind(this)}>Push page</Button>
-          <Button onClick={this.popPage.bind(this)}>Pop page</Button>
-        </p>
+      <Page>
+        <h2>Home</h2>
+        <div style={{ textAlign: 'center' }}>
+          <br />
+          <Button onClick={this.pushPage.bind(this)}>
+            Push Page
+          </Button>
+        </div>
       </Page>
     );
   }

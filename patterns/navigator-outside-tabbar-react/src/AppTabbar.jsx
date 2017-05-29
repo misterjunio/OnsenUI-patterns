@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Toolbar, Page, Tabbar, Tab } from 'react-onsenui';
 
 import Home from './Home'
+import Cards from './Cards'
+import Settings from './Settings'
 
 export default class AppTabbar extends React.Component {
-  pushPage() {
-    this.props.navigator.pushPage({ component: Home });
-  }
-
   renderToolbar() {
     return (
       <Toolbar>
@@ -17,23 +14,19 @@ export default class AppTabbar extends React.Component {
     );
   }
 
-  renderTabs() {
+  renderTabs(navigator) {
     return [
       {
-        content: <Home navigator={this.props.navigator} />,
-        tab: <Tab label="Home" icon="ion-ios-home-outline" />
+        content: <Home key="home" navigator={this.props.navigator} />,
+        tab: <Tab key="home" label="Home" icon="ion-home" />
       },
       {
-        content: <Home navigator={this.props.navigator} />,
-        tab: <Tab label="Dialogs" icon="ion-ios-albums-outline" />
+        content: <Cards key="cards" navigator={this.props.navigator} />,
+        tab: <Tab key="cards" label="Cards" icon="ion-card" badge="3" />
       },
       {
-        content: <Home />,
-        tab: <Tab label="Forms" icon="ion-edit" />
-      },
-      {
-        content: <Home navigator={this.props.navigator} />,
-        tab: <Tab label="Animations" icon="ion-film-marker" />
+        content: <Settings key="settings" navigator={this.props.navigator} />,
+        tab: <Tab key="settings" label="Settings" icon="ion-ios-cog" />
       }
     ];
   }
@@ -41,7 +34,7 @@ export default class AppTabbar extends React.Component {
   render() {
     return (
       <Page renderToolbar={this.renderToolbar}>
-        <Tabbar renderTabs={this.renderTabs} />
+        <Tabbar position='auto' index={0} renderTabs={this.renderTabs.bind(this)} />
       </Page>
     );
   }

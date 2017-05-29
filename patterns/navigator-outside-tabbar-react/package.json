@@ -1,11 +1,15 @@
 {
-  "name": "onsenui-v2-react-navigation",
-  "version": "2.2.7+20170324.1",
-  "description": "",
+  "name": "navigator-outside-tabbar-react",
+  "version": "1.0.0",
+  "description": "Navigator outside tabbar pattern with Onsen UI + React.",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/misterjunio/OnsenUI-patterns"
+  },
   "dependencies": {
-    "onsenui": "2.2.x",
-    "react": "15.4.2",
-    "react-dom": "15.4.2",
-    "react-onsenui": "1.2.x"
+    "onsenui": "2.3.x",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-onsenui": "1.3.x"
   }
 }
