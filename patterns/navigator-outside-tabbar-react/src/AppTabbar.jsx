@@ -25,7 +25,7 @@ export default class AppTabbar extends React.Component {
         tab: <Tab key="cards" label="Cards" icon="ion-card" badge="3" />
       },
       {
-        content: <Settings key="settings" navigator={this.props.navigator} />,
+        content: <Settings key="settings" />,
         tab: <Tab key="settings" label="Settings" icon="ion-ios-cog" />
       }
     ];
