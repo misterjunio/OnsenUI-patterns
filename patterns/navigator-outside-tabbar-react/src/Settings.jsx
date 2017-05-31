@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page } from 'react-onsenui';
 
-export default class Home extends React.Component {
+export default class Settings extends React.Component {
   render() {
     return (
       <Page>
