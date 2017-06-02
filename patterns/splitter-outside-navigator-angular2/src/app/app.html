@@ -1,0 +1,20 @@
+<ons-splitter>
+  <ons-splitter-side #menu side="right" width="220px" [attr.collapse]="'collapse'" [attr.swipeable]="'swipeable'">
+    <ons-page>
+      <ons-list>
+        <ons-list-item (click)="loadPage(home)" tappable>
+          Home
+        </ons-list-item>
+        <ons-list-item (click)="loadPage(cards)" tappable>
+          Cards
+        </ons-list-item>
+        <ons-list-item (click)="loadPage(settings)" tappable>
+          Settings
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content>
+    <ons-navigator #navi [page]="home"></ons-navigator>
+  </ons-splitter-content>
+</ons-splitter>

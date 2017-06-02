@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { OnsNavigator } from 'angular2-onsenui';
 
 import { AppTabbar } from './app-tabbar'
 

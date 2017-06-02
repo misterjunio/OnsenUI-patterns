@@ -1,7 +1,7 @@
 <template>
   <v-ons-page>
     <v-ons-toolbar>
-      <div class="center">Navigator outside Tabbar</div>
+      <div class="center">Navigator+Tabbar</div>
     </v-ons-toolbar>
   
     <v-ons-tabbar position="auto" :tabs="tabs" :index.sync="activeIndex">

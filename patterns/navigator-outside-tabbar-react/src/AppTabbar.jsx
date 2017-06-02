@@ -9,7 +9,7 @@ export default class AppTabbar extends React.Component {
   renderToolbar() {
     return (
       <Toolbar>
-        <div className="center">Navigator outside Tabbar</div>
+        <div className="center">Navigator+Tabbar</div>
       </Toolbar>
     );
   }

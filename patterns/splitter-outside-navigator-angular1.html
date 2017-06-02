@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Navigator outside Tabbar | Onsen UI + AngularJS</title>
+  <title>Splitter outside Navigator | Onsen UI Vanilla</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.3.1/css/onsenui.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onsen/2.3.1/css/onsen-css-components.css">
 
@@ -14,6 +14,18 @@
   <script>
     ons.bootstrap()
       .controller('PageCtrl', function ($scope) {
+        $scope.openMenu = function () {
+          var menu = document.getElementById('menu');
+          menu.open();
+        };
+
+        $scope.loadPage = function (page) {
+          var menu = document.getElementById('menu');
+
+          menu.close();
+          $scope.navi.resetToPage(page, { animation: 'fade' });
+        };
+
         document.addEventListener('init', function (event) {
           if (event.target.id === 'pageNav1') {
             var title = event.target.data && event.target.data.title ? event.target.data.title : 'Custom Page';
@@ -33,34 +45,74 @@
           $scope.navi.pushPage('pageNav2.html', { data: { cardTitle: event.target.textContent } })
         };
       });
-  </script>
 
+    document.addEventListener('init', function (event) {
+      if (event.target.id === 'pageNav1') {
+        var title = event.target.data && event.target.data.title ? event.target.data.title : 'Custom Page';
+        event.target.querySelector('ons-toolbar div.center').textContent = title;
+      }
+      if (event.target.id === 'pageNav2') {
+        var cardTitle = event.target.data && event.target.data.cardTitle ? event.target.data.cardTitle : 'Custom Card';
+        event.target.querySelector('ons-card div.title').textContent = cardTitle;
+      }
+    });
+
+    var customPush = function () {
+      navi.pushPage('pageNav1.html', { data: { title: navi.topPage.querySelector('ons-input').value } })
+    };
+
+    var customPush2 = function (event) {
+      navi.pushPage('pageNav2.html', { data: { cardTitle: event.target.textContent } })
+    };
+  </script>
 </head>
 
 <body>
-  <ons-navigator var="navi" ng-controller="PageCtrl">
-    <ons-page>
-      <ons-toolbar>
-        <div class="center">Navigator+Tabbar</div>
-      </ons-toolbar>
-
-      <ons-tabbar var="tabbar" position="auto">
-        <ons-tab icon="ion-home" label="Home" page="home.html" active="true"></ons-tab>
-        <ons-tab icon="ion-card" label="Cards" page="cards.html" badge="3"></ons-tab>
-        <ons-tab icon="ion-ios-cog" label="Settings" page="settings.html"></ons-tab>
-      </ons-tabbar>
-    </ons-page>
-  </ons-navigator>
+  <ons-splitter ng-controller="PageCtrl">
+    <ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item ng-click="loadPage('home.html')" tappable>
+            Home
+          </ons-list-item>
+          <ons-list-item ng-click="loadPage('cards.html')" tappable>
+            Cards
+          </ons-list-item>
+          <ons-list-item ng-click="loadPage('settings.html')" tappable>
+            Settings
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content>
+      <ons-navigator var="navi" page="home.html"></ons-navigator>
+    </ons-splitter-content>
+  </ons-splitter>
 
   <ons-template id="home.html">
     <ons-page>
+      <ons-toolbar>
+        <div class="center">
+          Splitter+Navigator
+        </div>
+        <div class="right">
+          <ons-toolbar-button ng-click="openMenu()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
       <h2>Home</h2>
       <div style="text-align: center">
         <br>
-        <ons-button ng-click="navi.pushPage('pageNav1.html');">
+        <ons-button ng-click="navi.pushPage('pageNav1.html')">
           Push Page
         </ons-button>
       </div>
+
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe left to open the menu!
+      </p>
     </ons-page>
   </ons-template>
 
@@ -71,6 +123,11 @@
           <ons-back-button>Back</ons-back-button>
         </div>
         <div class="center"></div>
+        <div class="right">
+          <ons-toolbar-button ng-click="openMenu()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
       </ons-toolbar>
 
       <div style="text-align: center">
@@ -85,11 +142,26 @@
           Pop Page
         </ons-button>
       </div>
+
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe left to open the menu!
+      </p>
     </ons-page>
   </ons-template>
 
   <ons-template id="cards.html">
     <ons-page>
+      <ons-toolbar>
+        <div class="center">
+          Splitter+Navigator
+        </div>
+        <div class="right">
+          <ons-toolbar-button ng-click="openMenu()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
       <h2>Cards</h2>
       <ons-list-title>Card List</ons-list-title>
       <ons-list>
@@ -97,6 +169,10 @@
         <ons-list-item ng-click="customPush2($event)">Card Two</ons-list-item>
         <ons-list-item ng-click="customPush2($event)">Card Three</ons-list-item>
       </ons-list>
+
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe left to open the menu!
+      </p>
     </ons-page>
   </ons-template>
 
@@ -105,6 +181,11 @@
       <ons-toolbar>
         <div class="left">
           <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="right">
+          <ons-toolbar-button ng-click="openMenu()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
         </div>
       </ons-toolbar>
 
@@ -128,15 +209,33 @@
           </ons-list>
         </div>
       </ons-card>
+
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe left to open the menu!
+      </p>
     </ons-page>
   </ons-template>
 
   <ons-template id="settings.html">
     <ons-page>
+      <ons-toolbar>
+        <div class="center">
+          Splitter+Navigator
+        </div>
+        <div class="right">
+          <ons-toolbar-button ng-click="openMenu()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
       <h2>Settings</h2>
+
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe left to open the menu!
+      </p>
     </ons-page>
   </ons-template>
-
 </body>
 
 </html>
