@@ -1,5 +1,13 @@
 <template>
   <v-ons-page>
+    <v-ons-toolbar>
+      <div class="center">Navigator+Tabbar</div>
+      <div class="right">
+        <ons-toolbar-button @click="openMenu">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </v-ons-toolbar>
     <h2>Cards</h2>
     <v-ons-list-title>Card List</v-ons-list-title>
     <v-ons-list>
@@ -24,9 +32,9 @@ export default {
           }
         }
       };
-      this.pageStack.push(pageToPush);
+      this.$emit('push', pageToPush);
     }
   },
-  props: ['pageStack']
+  props: ['openMenu']
 }
 </script>

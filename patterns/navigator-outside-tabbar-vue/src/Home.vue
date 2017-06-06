@@ -14,9 +14,6 @@
 import pageNav1 from './PageNav1';
 export default {
   methods: {
-    pop() {
-      this.pageStack.pop();
-    },
     push() {
       this.pageStack.push(pageNav1);
     }

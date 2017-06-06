@@ -21,8 +21,4 @@ export class MyApp {
     this.menu.nativeElement.close();
     this.navi.nativeElement.resetToPage(page, { animation: 'fade' });
   }
-
-  openMenu() {
-    this.menu.nativeElement.open();
-  }
 }

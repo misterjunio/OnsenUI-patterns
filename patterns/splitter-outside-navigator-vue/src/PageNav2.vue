@@ -4,6 +4,11 @@
       <div class="left">
         <v-ons-back-button>Back</v-ons-back-button>
       </div>
+      <div class="right">
+        <ons-toolbar-button @click="openMenu">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
     </v-ons-toolbar>
     <v-ons-card>
       <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
@@ -30,5 +35,6 @@
 
 <script>
 export default {
+  props: ['openMenu']
 }
 </script>

@@ -5,6 +5,11 @@
         <v-ons-back-button>Back</v-ons-back-button>
       </div>
       <div class="center">{{ title }}</div>
+      <div class="right">
+        <ons-toolbar-button @click="openMenu">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
     </v-ons-toolbar>
     <div style="text-align: center">
       <h1>Custom Page</h1>
@@ -31,7 +36,7 @@ export default {
   },
   methods: {
     pop() {
-      this.pageStack.pop();
+      this.$emit('pop');
     },
     push() {
       var title = this.$el.querySelector('ons-input').value;
@@ -43,9 +48,9 @@ export default {
           }
         }
       };
-      this.pageStack.push(pageToPush);
+      this.$emit('push', pageToPush);
     }
   },
-  props: ['pageStack']
+  props: ['openMenu']
 }
 </script>
