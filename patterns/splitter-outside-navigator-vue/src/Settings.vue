@@ -9,6 +9,9 @@
       </div>
     </v-ons-toolbar>
     <h2>Settings</h2>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      Swipe left to open the menu!
+    </p>
   </v-ons-page>
 </template>
 

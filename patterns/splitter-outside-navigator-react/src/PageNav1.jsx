@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Toolbar, BackButton, Input, Button } from 'react-onsenui';
+import { Page, Toolbar, ToolbarButton, Icon, BackButton, Input, Button } from 'react-onsenui';
 
 export default class PageNav1 extends React.Component {
   constructor(props) {
@@ -15,8 +15,17 @@ export default class PageNav1 extends React.Component {
       <Toolbar>
         <div className='left'><BackButton>Back</BackButton></div>
         <div className="center">{this.state.title}</div>
+        <div className='right'>
+          <ToolbarButton onClick={this.showMenu.bind(this)}>
+            <Icon icon='ion-navicon, material:md-menu' />
+          </ToolbarButton>
+        </div>
       </Toolbar>
     );
+  }
+
+  showMenu() {
+    this.props.showMenu();
   }
 
   pushPage() {
@@ -29,7 +38,7 @@ export default class PageNav1 extends React.Component {
 
   render() {
     return (
-      <Page renderToolbar={this.renderToolbar}>
+      <Page renderToolbar={this.renderToolbar.bind(this)}>
         <div style={{ textAlign: 'center' }}>
           <h1>Custom Page</h1>
           <p>
@@ -42,6 +51,9 @@ export default class PageNav1 extends React.Component {
             Pop Page
           </Button>
         </div>
+        <p style={{ textAlign: 'center', opacity: '0.6', paddingTop: '20px' }}>
+          Swipe left to open the menu!
+        </p>
       </Page>
     );
   }

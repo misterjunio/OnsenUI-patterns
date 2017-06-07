@@ -15,6 +15,9 @@
       <v-ons-list-item @click="push">Card Two</v-ons-list-item>
       <v-ons-list-item @click="push">Card Three</v-ons-list-item>
     </v-ons-list>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      Swipe left to open the menu!
+    </p>
   </v-ons-page>
 </template>
 

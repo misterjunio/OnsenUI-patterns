@@ -23,6 +23,9 @@
         Pop Page
       </v-ons-button>
     </div>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      Swipe left to open the menu!
+    </p>
   </v-ons-page>
 </template>
 

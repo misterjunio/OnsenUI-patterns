@@ -1,0 +1,15 @@
+{
+  "name": "splitter-outside-navigator-react",
+  "version": "1.0.0",
+  "description": "Splitter outside navigator pattern with Onsen UI + React.",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/misterjunio/OnsenUI-patterns"
+  },
+  "dependencies": {
+    "onsenui": "2.3.x",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-onsenui": "1.3.x"
+  }
+}
