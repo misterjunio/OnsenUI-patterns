@@ -24,12 +24,10 @@ export default class App extends React.Component {
 
   loadPage(page) {
     this.hide();
-    this.navigator.resetPage({ component: page, props: { key: page } });
+    this.navigator.resetPage({ component: page, props: { key: page } }, { animation: 'fade' });
   }
 
   renderPage(route, navigator) {
-    console.log('route', route);
-    console.log('navigator', navigator);
     route.props = route.props || {};
     route.props.navigator = navigator;
     route.props.showMenu = this.show.bind(this);
