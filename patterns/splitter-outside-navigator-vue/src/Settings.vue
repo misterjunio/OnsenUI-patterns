@@ -3,9 +3,9 @@
     <v-ons-toolbar>
       <div class="center">Navigator+Tabbar</div>
       <div class="right">
-        <ons-toolbar-button @click="openMenu">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
+        <v-ons-toolbar-button @click="openMenu">
+          <v-ons-icon icon="md-menu"></v-ons-icon>
+        </v-ons-toolbar-button>
       </div>
     </v-ons-toolbar>
     <h2>Settings</h2>

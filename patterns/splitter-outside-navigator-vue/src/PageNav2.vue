@@ -5,9 +5,9 @@
         <v-ons-back-button>Back</v-ons-back-button>
       </div>
       <div class="right">
-        <ons-toolbar-button @click="openMenu">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
+        <v-ons-toolbar-button @click="openMenu">
+          <v-ons-icon icon="md-menu"></v-ons-icon>
+        </v-ons-toolbar-button>
       </div>
     </v-ons-toolbar>
     <v-ons-card>

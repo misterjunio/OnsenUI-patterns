@@ -6,9 +6,9 @@
       </div>
       <div class="center">{{ title }}</div>
       <div class="right">
-        <ons-toolbar-button @click="openMenu">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
+        <v-ons-toolbar-button @click="openMenu">
+          <v-ons-icon icon="md-menu"></v-ons-icon>
+        </v-ons-toolbar-button>
       </div>
     </v-ons-toolbar>
     <div style="text-align: center">
